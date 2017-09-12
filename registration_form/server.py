@@ -20,10 +20,12 @@ def index():
     session['email']=''
     session['pw']=''
     session['cpw']=''
+#     Is it possible to maybe throw all of these in a dictionary and then just pass the dictionary along to the template? Just for Readability
     return render_template('index.html',fname=session['fname'], lname=session['lname'], email=session['email'], pw=session['pw'], cpw=session['cpw'])
 
 @app.route('/process', methods=['post'])
 def process():
+#     Similarly, maybe a dictionary could make code more readable here
     session['fname']=request.form['fname']
     session['lname']=request.form['lname']
     session['email']=request.form['email']
